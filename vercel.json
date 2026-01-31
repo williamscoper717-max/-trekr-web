@@ -1,24 +1,14 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/static-build",
-      "config": { "distDir": "dist" }
-    },
-    {
-      "src": "api/main.py",
-      "use": "@vercel/python"
-    }
-  ],
-  "rewrites": [
-    {
-      "source": "/api/(.*)",
-      "destination": "api/main.py"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
-    }
-  ]
+    "buildCommand": "npm run build",
+    "outputDirectory": "dist",
+    "rewrites": [
+          {
+                  "source": "/api/(.*)",
+                  "destination": "/api/main.py"
+          },
+          {
+                  "source": "/(.*)",
+                  "destination": "/index.html"
+          }
+    ]
 }
